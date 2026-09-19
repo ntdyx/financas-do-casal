@@ -1,4 +1,4 @@
--- Schema completo do Gastadeiras.
+-- Schema completo do Finanças do Casal.
 -- Gerado a partir das migrations do app original (não edite à mão: pra mudar o
 -- banco, crie uma migration nova depois desta).
 --

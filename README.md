@@ -1,4 +1,4 @@
-# Gastadeiras
+# Finanças do Casal
 
 App de finanças pra casal. Ele puxa os lançamentos dos bancos pela
 [Pluggy](https://pluggy.ai) e ajuda vocês a:
@@ -15,7 +15,7 @@ e o site (Vercel) são de vocês. Ninguém mais vê os dados.
 ## Instalar
 
 - **Com Claude Code:** abra esta pasta nele e peça
-  *"instala o Gastadeiras pra gente seguindo o INSTALAR-COM-CLAUDE.md"*.
+  *"instala o app Finanças do Casal pra gente seguindo o INSTALAR-COM-CLAUDE.md"*.
 - **Na mão:** siga o [INSTALAR.md](INSTALAR.md).
 
 ## Pra quem vai mexer no código

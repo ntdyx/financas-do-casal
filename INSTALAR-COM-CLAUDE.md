@@ -1,7 +1,7 @@
 # Roteiro de instalação para o Claude Code
 
 > **Pessoa:** abra esta pasta no Claude Code e escreva
-> *"instala o Gastadeiras pra gente seguindo o INSTALAR-COM-CLAUDE.md"*.
+> *"instala o app Finanças do Casal pra gente seguindo o INSTALAR-COM-CLAUDE.md"*.
 > Antes, instale a extensão **Claude in Chrome** e deixe o Chrome aberto.
 
 ---
@@ -53,7 +53,7 @@ senha nova nem e-mail de confirmação.
 
 ### Supabase
 1. Abra https://supabase.com/dashboard/sign-up. Mostre o botão de Google/GitHub.
-2. Depois do login, se pedir pra criar uma organização: nome `Gastadeiras`, tipo
+2. Depois do login, se pedir pra criar uma organização: nome `Financas do Casal`, tipo
    **Personal**, plano **Free**. Não crie projeto pelo site: você faz isso no passo 3.
 
 ### Vercel
@@ -79,7 +79,7 @@ Só siga pro próximo serviço quando ela estiver logada no painel do anterior.
 ## 3. Supabase (pelo terminal)
 
 1. `supabase login` abre o navegador. Peça pra ela autorizar.
-2. `supabase orgs list` e `supabase projects create gastadeiras --org-id <ID> --region sa-east-1 --db-password <senha forte gerada por você>`.
+2. `supabase orgs list` e `supabase projects create financas-do-casal --org-id <ID> --region sa-east-1 --db-password <senha forte gerada por você>`.
    Guarde o `project-ref`.
 3. `supabase link --project-ref <REF>`.
 4. Monte o banco:
@@ -109,7 +109,7 @@ O login é por código de 6 dígitos. Antes de abrir qualquer página, avise o q
 mudar e espere ela dizer que pode.
 1. Abra `https://supabase.com/dashboard/project/<REF>/auth/templates`. Nos modelos
    **Confirm signup** e **Magic Link**, troque o corpo por
-   `<h2>Seu código do Gastadeiras</h2><p>{{ .Token }}</p>` e salve.
+   `<h2>Seu código do Finanças do Casal</h2><p>{{ .Token }}</p>` e salve.
 2. Abra `https://supabase.com/dashboard/project/<REF>/auth/url-configuration`.
    Coloque a URL de produção em **Site URL** e em **Redirect URLs**, e salve.
 

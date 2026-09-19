@@ -106,7 +106,7 @@ export async function POST(req: Request) {
 
   try {
     await resend.emails.send({
-      from: 'Gastadeiras <onboarding@resend.dev>',
+      from: 'Finanças do Casal <onboarding@resend.dev>',
       to,
       subject: `🕵️ ${lista.length} ${lista.length === 1 ? 'gasto misterioso' : 'gastos misteriosos'} pra explicar`,
       html,

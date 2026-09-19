@@ -81,7 +81,7 @@ export default function LoginPage() {
             className="gd-display mt-4 text-[30px]"
             style={{ color: 'var(--nav-ink)' }}
           >
-            Gastadeiras
+            Finanças do Casal
           </h1>
           <p className="mt-2 text-sm" style={{ color: 'var(--nav-ink-2)' }}>
             {step === 'email'

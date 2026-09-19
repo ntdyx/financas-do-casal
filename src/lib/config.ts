@@ -1,7 +1,7 @@
 import { SPLIT_LABEL } from './casal'
 
 /**
- * Configurações do app Gastadeiras.
+ * Configurações do app Finanças do Casal.
  */
 
 /**

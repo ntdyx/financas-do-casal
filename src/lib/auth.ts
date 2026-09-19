@@ -20,7 +20,7 @@ export async function getUser(): Promise<SessionUser | null> {
   // Ambiente de TESTE: deploy separado com TEST_USER_ID entra direto (sem login),
   // com sua própria cópia de dados. Atribui como pessoa 1 por padrão.
   if (process.env.TEST_USER_ID) {
-    return { id: process.env.TEST_USER_ID, email: 'teste@gastadeiras.app', actor: DEFAULT_MEMBER }
+    return { id: process.env.TEST_USER_ID, email: 'teste@financas-do-casal.app', actor: DEFAULT_MEMBER }
   }
 
   const supabase = await createClient()
@@ -35,7 +35,7 @@ export async function getUser(): Promise<SessionUser | null> {
   }
 
   if (process.env.NODE_ENV === 'development') {
-    return { id: DEV_USER_ID, email: 'dev@gastadeiras.local', actor: DEFAULT_MEMBER }
+    return { id: DEV_USER_ID, email: 'dev@financas-do-casal.local', actor: DEFAULT_MEMBER }
   }
 
   return null

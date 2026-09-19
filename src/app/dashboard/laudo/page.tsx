@@ -11,7 +11,7 @@ import {
   type LaudoTx, type Dono,
 } from '@/lib/laudo'
 
-export const metadata = { title: 'Laudo · Gastadeiras' }
+export const metadata = { title: 'Laudo · Finanças do Casal' }
 
 const MESES = ['jan', 'fev', 'mar', 'abr', 'mai', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
 const rotulo = (ym: string) => `${MESES[Number(ym.slice(5, 7)) - 1]}/${ym.slice(2, 4)}`

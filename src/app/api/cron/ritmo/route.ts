@@ -126,13 +126,13 @@ export async function POST(req: Request) {
     </p>
     <p style="font-size:14px;margin:0 0 6px;"><b>Onde está indo a rotina:</b></p>
     <table style="width:100%;border-collapse:collapse;">${linhas}</table>
-    <a href="${appUrl}/dashboard" style="display:inline-block;margin-top:20px;background:#111;color:#fff;text-decoration:none;padding:10px 18px;border-radius:10px;font-size:14px;font-weight:600;">Ver no Gastadeiras →</a>
+    <a href="${appUrl}/dashboard" style="display:inline-block;margin-top:20px;background:#111;color:#fff;text-decoration:none;padding:10px 18px;border-radius:10px;font-size:14px;font-weight:600;">Ver no Finanças do Casal →</a>
     <p style="color:#9ca3af;font-size:12px;margin-top:20px;">Você recebe isto uma vez por mês, no dia em que a conta deixa de fechar. 💜</p>
   </div>`
 
   try {
     await resend.emails.send({
-      from: 'Gastadeiras <onboarding@resend.dev>',
+      from: 'Finanças do Casal <onboarding@resend.dev>',
       to,
       subject: `⚠️ ${MESES[month - 1]} fecha com ${BRL(sobra)}`,
       html,

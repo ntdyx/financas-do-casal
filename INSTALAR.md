@@ -1,9 +1,9 @@
-# Instalar o Gastadeiras pro seu casal
+# Instalar o Finanças do Casal pro seu casal
 
 Você vai ter uma cópia só sua: seu banco de dados, sua conta na Pluggy, seu site.
 Ninguém mais vê seus dados. Leva uns 40 minutos.
 
-**Tem Claude Code?** Abra esta pasta nele e peça: *"instala o Gastadeiras pra gente
+**Tem Claude Code?** Abra esta pasta nele e peça: *"instala o app Finanças do Casal pra gente
 seguindo o INSTALAR-COM-CLAUDE.md"*. Ele faz quase tudo por você.
 
 Precisa de conta (todas têm plano grátis) em:
@@ -27,7 +27,7 @@ Suba este código num repositório **seu** no GitHub (pode ser privado).
    e-mail precisa mostrar o código. Nos modelos **Confirm signup** e **Magic Link**,
    troque o corpo por algo como:
    ```html
-   <h2>Seu código do Gastadeiras</h2>
+   <h2>Seu código do Finanças do Casal</h2>
    <p>{{ .Token }}</p>
    ```
 5. Guarde três coisas de **Project Settings → API**: a URL do projeto, a
@@ -51,7 +51,7 @@ cobre as contas de vocês duas.
    - `NOMES_DO_CASAL`: como os nomes completos aparecem no extrato, ex.
      `maria silva, joana souza`. É o que faz um Pix entre vocês não virar gasto.
    - Deixe `HOUSEHOLD_OWNER_ID` e `NEXT_PUBLIC_APP_URL` vazios por enquanto.
-3. Clique em **Deploy**. No fim, copie a URL do site (ex. `https://meu-gastadeiras.vercel.app`).
+3. Clique em **Deploy**. No fim, copie a URL do site (ex. `https://financas-do-casal.vercel.app`).
 
 ## 5. Ligar as pontas
 

@@ -142,7 +142,7 @@ export async function POST(req: Request) {
           <td style="padding:5px 0;font-size:13.5px;color:#374151;">${s.emoji} ${s.label}</td>
           <td style="padding:5px 0;font-size:12.5px;text-align:right;color:#6b7280;">${DIA(s.vencimento)}${s.valor ? ` · ${BRL(s.valor)}` : ''}</td>
         </tr>`).join('')}</table>` : ''}
-    <a href="${appUrl}/dashboard" style="display:inline-block;margin-top:20px;background:#111;color:#fff;text-decoration:none;padding:10px 18px;border-radius:10px;font-size:14px;font-weight:600;">Ver no Gastadeiras →</a>
+    <a href="${appUrl}/dashboard" style="display:inline-block;margin-top:20px;background:#111;color:#fff;text-decoration:none;padding:10px 18px;border-radius:10px;font-size:14px;font-weight:600;">Ver no Finanças do Casal →</a>
     ${snap.semDia > 0 ? `<p style="color:#9ca3af;font-size:12px;margin-top:18px;">${snap.semDia} conta${snap.semDia > 1 ? 's' : ''} ainda sem dia de vencimento cadastrado — sem o dia, o aviso é um chute. <a href="${appUrl}/dashboard/contas" style="color:#7c5cfc;">cadastrar</a></p>` : ''}
     <p style="color:#9ca3af;font-size:12px;margin-top:14px;">Este aviso chega uma vez no dia do vencimento e, se a conta não for paga, uma vez mais depois. 💜</p>
   </div>`
@@ -154,7 +154,7 @@ export async function POST(req: Request) {
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
-    await resend.emails.send({ from: 'Gastadeiras <onboarding@resend.dev>', to, subject, html })
+    await resend.emails.send({ from: 'Finanças do Casal <onboarding@resend.dev>', to, subject, html })
   } catch (e) {
     await desmarcar()
     return NextResponse.json(

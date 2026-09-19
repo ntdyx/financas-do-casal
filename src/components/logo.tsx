@@ -1,5 +1,5 @@
 /**
- * Marca Gastadeiras — carteira com coração dentro de um círculo.
+ * Marca Finanças do Casal — carteira com coração dentro de um círculo.
  * Line-art em `currentColor` (some hard-coded color): o pai define a cor
  * (lime no fundo escuro do sidebar/login). Escala sem perder nitidez.
  */
@@ -39,7 +39,7 @@ export function LogoMark({
 }
 
 /**
- * Lockup completo: marca + wordmark "Gastadeiras".
+ * Lockup completo: marca + wordmark "Finanças do Casal".
  * `tone` controla a cor da marca ('lime' padrão para fundos escuros).
  */
 export function Logo({
@@ -68,9 +68,10 @@ export function Logo({
           fontSize: size * 0.82,
           color: wordmarkColor,
           lineHeight: 1,
+          whiteSpace: 'nowrap',
         }}
       >
-        Gastadeiras
+        Finanças do Casal
       </span>
     </span>
   )

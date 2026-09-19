@@ -70,7 +70,7 @@ export function Sidebar({ pendingCount = 0 }: { member?: { name: string; photo: 
       style={{ background: 'var(--nav-bg)' }}
     >
       <div className="flex items-center px-2 pb-[26px] pt-1">
-        <Logo size={26} />
+        <Logo size={22} />
       </div>
 
       <nav className="flex flex-col gap-[3px]">

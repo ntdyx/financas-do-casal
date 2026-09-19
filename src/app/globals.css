@@ -1,0 +1,213 @@
+@import "tailwindcss";
+
+/* Gastadeiras — design system "Violeta vivo"
+   Off-white + preto + um roxo só. pessoa 1 = preto/grafite, pessoa 2 = roxo.
+   Verde/vermelho só para entrada/saída. Light por padrão. */
+
+:root {
+  /* surfaces */
+  --bg: #F3F1EA;          /* fundo off-white quente */
+  --panel: #FFFFFF;       /* cards */
+  --surface: #FFFFFF;
+  --surface-2: #FAF8F2;   /* superfície secundária / inputs */
+  --rail: #FAF8F2;
+
+  /* ink (preto encorpado é o herói) */
+  --ink: #16140F;
+  --ink-2: #6B675E;
+  --ink-soft: #726E64;    /* texto de apoio — passa AA (4.5:1) no off-white */
+  --ink-softer: #807B70;  /* muted/decorativo — 3.7:1 (era 1.8, ilegível) */
+
+  /* lines */
+  --line: #E8E4DA;
+  --line-strong: #DAD6CB;
+
+  /* accent — violeta, o único sotaque */
+  --accent: #7C5CFC;
+  --accent-strong: #6A48E8;
+  --accent-soft: #ECE6FF;
+
+  /* status — verde/vermelho só para entrada/saída */
+  --positive: #3C8C2C;
+  --positive-soft: #E6EFE8;
+  --negative: #C0392B;
+  --negative-soft: #F6E7E3;
+  /* aviso = neutro (sem âmbar) */
+  --warn: #6B675E;
+  --warn-soft: #ECEAE4;
+
+  /* limão — atalhos, badges, CTAs de destaque */
+  --lime: #C6F24E;
+  --lime-soft: #EEF7C9;
+  --lime-ink: #3A4A10;
+
+  /* azul — card de acerto/saldo */
+  --blue: #A7D6F0;
+  --blue-soft: #DCEEF9;
+  --blue-ink: #173C4E;
+
+  /* sidebar (menu lateral escuro) */
+  --nav-bg: #0E0F15;
+  --nav-card: #181922;
+  --nav-ink: #EDEDF0;
+  --nav-ink-2: #9A9AA8;
+  --nav-line: #262732;
+
+  /* pessoas: pessoa 1 = violeta, pessoa 2 = verde */
+  --na: #7C5CFC;
+  --na-soft: #ECE6FF;
+  --na-line: #D8CCFF;
+  --je: #3C8C2C;
+  --je-soft: #E6EFE8;
+  --je-line: #BEE3A8;
+
+  --ava-nat: linear-gradient(135deg, #7C5CFC 0%, #A78BFA 100%);
+  --ava-jeni: linear-gradient(135deg, #8FD46B 0%, #3C8C2C 100%);
+}
+
+[data-theme="dark"] {
+  --bg: #0E0F12;
+  --panel: #16181D;
+  --surface: #16181D;
+  --surface-2: #1B1E24;
+  --rail: #0B0C0F;
+  --ink: #F3EFE6;
+  --ink-2: #C8C5BD;
+  --ink-soft: #908D85;
+  --ink-softer: #6B6862;
+  --line: rgba(243,239,230,0.10);
+  --line-strong: rgba(243,239,230,0.18);
+  --accent: #A78BFA;
+  --accent-strong: #8B5CF6;
+  --accent-soft: rgba(167,139,250,0.16);
+  --positive: #6DC580;
+  --positive-soft: rgba(109,197,128,0.16);
+  --negative: #F08A7E;
+  --negative-soft: rgba(240,138,126,0.16);
+  --warn: #E0A04A;
+  --warn-soft: rgba(224,160,74,0.16);
+  --lime: #C6F24E;
+  --lime-soft: rgba(198,242,78,0.16);
+  --lime-ink: #C6F24E;
+  --blue: #7FB4D8;
+  --blue-soft: rgba(127,180,216,0.18);
+  --blue-ink: #DCEEF9;
+  --nav-bg: #0B0C0F;
+  --nav-card: #16181D;
+  --nav-ink: #F3EFE6;
+  --nav-ink-2: #908D85;
+  --nav-line: rgba(243,239,230,0.10);
+  --na: #A78BFA;
+  --na-soft: rgba(167,139,250,0.16);
+  --na-line: rgba(167,139,250,0.28);
+  --je: #8FD46B;
+  --je-soft: rgba(143,212,107,0.16);
+  --je-line: rgba(143,212,107,0.28);
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--ink);
+  --font-sans: 'Libre Franklin', system-ui, sans-serif;
+  --font-display: 'Libre Franklin', system-ui, sans-serif;
+  --font-mono: 'Libre Franklin', ui-monospace, monospace;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Libre Franklin', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Utility classes used across the app */
+.gd-display { font-family: 'Libre Franklin', sans-serif; font-weight: 800; letter-spacing: -0.035em; line-height: 1; }
+.gd-mono { font-variant-numeric: tabular-nums; }
+
+/* Modo privado — borra valores monetários (olhinho no header).
+   Blur em `em` p/ escalar com o tamanho da fonte: número grande borra mais. */
+.gd-amount { transition: filter 0.15s ease; }
+html[data-privacy="on"] .gd-amount {
+  filter: blur(0.5em);
+  user-select: none;
+}
+
+.gd-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 24px;
+}
+
+.gd-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ink-2);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+.gd-chip.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+.gd-chip.accent { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+
+.gd-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 14px;
+  border-radius: 11px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+.gd-btn:hover { background: var(--surface-2); }
+.gd-btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.gd-btn.accent  { background: var(--accent); color: #fff; border-color: var(--accent); }
+.gd-btn.accent:hover { background: var(--accent-strong); }
+.gd-btn.lime    { background: var(--lime); color: var(--lime-ink); border-color: var(--lime); font-weight: 700; }
+.gd-btn.lime:hover { filter: brightness(0.97); }
+
+/* Avatar */
+.gd-ava {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  display: inline-grid; place-items: center;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 700; font-size: 12px;
+  color: #fff; flex-shrink: 0;
+}
+.gd-ava.nat  { background: var(--ava-nat); }
+.gd-ava.jeni { background: var(--ava-jeni); }
+
+/* Linha-cartão compacta (listas) — mesma linguagem do gd-card, menos padding.
+   Usa tokens (não bg-white), então respeita o tema escuro. */
+.gd-row {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+}
+
+/* Empty state padrão — caixa tracejada usada em várias telas */
+.gd-empty {
+  border: 1px dashed var(--line-strong);
+  border-radius: 18px;
+  padding: 44px 24px;
+  text-align: center;
+  color: var(--ink-soft);
+}
+
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Marca — carteira + coração. Herda a cor via currentColor (lime no escuro). */
+.gd-logo { display: inline-block; }
